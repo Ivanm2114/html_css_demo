@@ -1,12 +1,6 @@
 /.env
 /steam.py
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/inspectionProfiles/profiles_settings.xml
-/.idea/inspectionProfiles/Project_Default.xml
-/.idea/vcs.xml
-/.idea/.gitignore
-/.idea/api_app.iml
+/.idea/
 /pyvenv.cfg
 /Lib
 /Scripts
