@@ -1,3 +1,4 @@
+"""Берем данные о пользователе из cabinet miem"""
 import os
 import requests
 from dotenv import load_dotenv
