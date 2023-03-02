@@ -7,3 +7,6 @@
 /.idea/vcs.xml
 /.idea/.gitignore
 /.idea/api_app.iml
+/pyvenv.cfg
+/Lib
+/Scripts
