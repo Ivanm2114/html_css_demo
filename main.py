@@ -20,21 +20,21 @@ print(response)
 steam_stats = requests.get(
     f"http://api.steampowered.com/"
     f"ISteamUser/GetPlayerSummaries/"
-    f"v0002/?key={key}&steamids={player_id}").text
+    f"v0002/?key={key}&steamids={player_id}", timeout=1).text
 print(steam_stats)
 
 # CS:GO
 cs_stats = requests.get(
     f"http://api.steampowered.com/"
     f"ISteamUserStats/GetUserStatsForGame/"
-    f"v0002/?appid=730&key={key}&steamid={player_id}").text
+    f"v0002/?appid=730&key={key}&steamid={player_id}", timeout=1).text
 print(cs_stats)
 
 # PAYDAY 2
 payday_stats = requests.get(
     f"http://api.steampowered.com/"
     f"ISteamUserStats/GetUserStatsForGame/"
-    f"v0002/?appid=218620&key={key}&steamid={player_id}").text
+    f"v0002/?appid=218620&key={key}&steamid={player_id}", timeout=1).text
 print(payday_stats)
 
 arr = [response, steam_stats, cs_stats, payday_stats]
