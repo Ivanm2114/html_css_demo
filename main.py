@@ -12,7 +12,7 @@ key = os.getenv("STEAM_API_KEY")
 RESPONSE = requests.get(f"https://cabinet.miem.hse.ru/public"
                         f"-api/student_"
                         f"statistics/{student_id}", timeout=1).text
-RESPONSE = bytes(response, "utf-8").decode("unicode_escape")
+RESPONSE = bytes(RESPONSE, "utf-8").decode("unicode_escape")
 
 print(RESPONSE)
 
