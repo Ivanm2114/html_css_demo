@@ -9,12 +9,12 @@ student_id = os.getenv("USER_CABINET_ID")
 player_id = os.getenv("PLAYER_ID")
 key = os.getenv("STEAM_API_KEY")
 
-response = requests.get(f"https://cabinet.miem.hse.ru/public"
+RESPONSE = requests.get(f"https://cabinet.miem.hse.ru/public"
                         f"-api/student_"
                         f"statistics/{student_id}", timeout=1).text
-response = bytes(response, "utf-8").decode("unicode_escape")
+RESPONSE = bytes(response, "utf-8").decode("unicode_escape")
 
-print(response)
+print(RESPONSE)
 
 # GENRAL STATS
 steam_stats = requests.get(
@@ -37,7 +37,7 @@ payday_stats = requests.get(
     f"v0002/?appid=218620&key={key}&steamid={player_id}", timeout=1).text
 print(payday_stats)
 
-arr = [response, steam_stats, cs_stats, payday_stats]
+arr = [RESPONSE, steam_stats, cs_stats, payday_stats]
 with open("answer.txt", mode='w', encoding='utf-8') as file:
     # CABINET MIEM INFO
     for el in arr:
