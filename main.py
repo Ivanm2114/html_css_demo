@@ -1,4 +1,5 @@
-"""Берем данные о пользователе из cabinet miem, данные о steam аккаунте, статистику из CS:GO и PAYDAY 2"""
+"""Берем данные о пользователе из cabinet miem,
+ данные о steam аккаунте, статистику из CS:GO и PAYDAY 2"""
 import os
 import requests
 from dotenv import load_dotenv
