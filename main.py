@@ -1,7 +1,6 @@
 """Берем данные о пользователе из cabinet miem,
  данные о steam аккаунте, статистику из CS:GO и PAYDAY 2"""
-import os
-import requests
+
 from dotenv import load_dotenv
 from funcs import *
 
@@ -9,31 +8,18 @@ load_dotenv()
 
 student_id = os.getenv("USER_CABINET_ID")
 player_id = os.getenv("PLAYER_ID")
-key = os.getenv("STEAM_API_KEY")
+steam_key = os.getenv("STEAM_API_KEY")
 
 # CABINET MIEM INFO
-RESPONSE = requests.get(f"https://cabinet.miem.hse.ru/public"
-                        f"-api/student_"
-                        f"statistics/{student_id}", timeout=1).text
-RESPONSE = bytes(RESPONSE, "utf-8").decode("unicode_escape")
-
+RESPONSE = cabinet_student_text(student_id)
 # GENRAL STATS
-steam_stats = requests.get(
-    f"http://api.steampowered.com/"
-    f"ISteamUser/GetPlayerSummaries/"
-    f"v0002/?key={key}&steamids={player_id}", timeout=1).text
+steam_stats = steam_profile_stats(steam_key,player_id)
 
 # CS:GO
-cs_stats = requests.get(
-    f"http://api.steampowered.com/"
-    f"ISteamUserStats/GetUserStatsForGame/"
-    f"v0002/?appid=730&key={key}&steamid={player_id}", timeout=1).text
+cs_stats = cs_steam_stats(steam_key,player_id)
 
 # PAYDAY 2
-payday_stats = requests.get(
-    f"http://api.steampowered.com/"
-    f"ISteamUserStats/GetUserStatsForGame/"
-    f"v0002/?appid=218620&key={key}&steamid={player_id}", timeout=1).text
+payday_stats = payday2_steam_stats(steam_key,player_id)
 
 arr = [RESPONSE, steam_stats, cs_stats, payday_stats]
 with open("answer.txt", mode='w', encoding='utf-8') as file:
