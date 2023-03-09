@@ -3,7 +3,8 @@
 import os
 
 from dotenv import load_dotenv
-from funcs import cs_steam_stats, cabinet_student_text, steam_profile_stats, payday2_steam_stats
+from funcs import cs_steam_stats, cabinet_student_text,\
+    steam_profile_stats, payday2_steam_stats
 
 load_dotenv()
 
