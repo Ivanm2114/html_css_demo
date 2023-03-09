@@ -1,8 +1,9 @@
 """Берем данные о пользователе из cabinet miem,
  данные о steam аккаунте, статистику из CS:GO и PAYDAY 2"""
+import os
 
 from dotenv import load_dotenv
-from funcs import *
+from funcs import cs_steam_stats, cabinet_student_text, steam_profile_stats, payday2_steam_stats
 
 load_dotenv()
 
@@ -13,13 +14,13 @@ steam_key = os.getenv("STEAM_API_KEY")
 # CABINET MIEM INFO
 RESPONSE = cabinet_student_text(student_id)
 # GENRAL STATS
-steam_stats = steam_profile_stats(steam_key,player_id)
+steam_stats = steam_profile_stats(steam_key, player_id)
 
 # CS:GO
-cs_stats = cs_steam_stats(steam_key,player_id)
+cs_stats = cs_steam_stats(steam_key, player_id)
 
 # PAYDAY 2
-payday_stats = payday2_steam_stats(steam_key,player_id)
+payday_stats = payday2_steam_stats(steam_key, player_id)
 
 arr = [RESPONSE, steam_stats, cs_stats, payday_stats]
 with open("answer.txt", mode='w', encoding='utf-8') as file:
