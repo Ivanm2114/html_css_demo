@@ -25,6 +25,6 @@ cs_stats = cs_steam_stats(steam_key, player_id)
 payday_stats = payday2_steam_stats(steam_key, player_id)
 
 d = {"cabinet_miem": cabinet_info, "steam_genera": steam_stats, "cs_stats": cs_stats, "payday_stats": payday_stats}
-with open("data.json", mode='w', encoding='utf-8') as file:
+with open("data/data.json", mode='w', encoding='utf-8') as file:
     json.dump(d, file, ensure_ascii=False, indent=4)
     print(d)
