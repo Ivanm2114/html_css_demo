@@ -1,3 +1,4 @@
+
 h1 {
     color: white;
     font-size:50px;
@@ -5,18 +6,56 @@ h1 {
 }
 
 h2 {
-    color: navy;
+    color: #00F1FF;
     font-weight:bold;
 }
 
+.big-text{
+    font-size: 75px;
+    font-weight: bold;
+}
+
+
+#myVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 1920px;
+  max-height: 1080px;
+  z-index:-1;
+}
+
+.name_header{
+  text-align: center;
+  top: 0;
+  padding: 0px;
+  position: relative;
+  margin: 0px;
+  background: linear-gradient(to bottom, #000000 0%,#363b82 13%,#599dd1 25%,#ffffff 40%,#341f49 66%,#933f8a 80%,#e060dc 90%,#ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+
+
+.content {
+  position: fixed;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
 body {
-    background-color: grey;
+    background-color: #02000D;
     font-family: "SFProText";
+
 }
 
 @font-face {
     font-family: "SFProText";
-    src : url("../fonts/SFProText-Light.ttf");
+    src : url("../fonts/Rocket Rinder.otf");
     font-weight: normal;
     font-style: normal;
 }
@@ -27,4 +66,3 @@ body {
     font-weight: bold;
     font-style: normal;
 }
-
