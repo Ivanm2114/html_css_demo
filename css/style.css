@@ -1,0 +1,30 @@
+h1 {
+    color: white;
+    font-size:50px;
+    font-weight: normal;
+}
+
+h2 {
+    color: navy;
+    font-weight:bold;
+}
+
+body {
+    background-color: grey;
+    font-family: "SFProText";
+}
+
+@font-face {
+    font-family: "SFProText";
+    src : url("../fonts/SFProText-Light.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "SFProText";
+    src : url("../fonts/SFProText-Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
