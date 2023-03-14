@@ -1,4 +1,18 @@
 
+.name_header{
+  text-align: center;
+  top: 0;
+  padding: 0px;
+  position: relative;
+  margin: 0px;
+  background: linear-gradient(to bottom, #000000 13%,#363b82 27%,#599dd1 34%,#ffffff 45%,#341f49 51%,#933f8a 64%,#933f8a 74%,#e060dc 90%,#ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+
+
+
+
 h1 {
     color: white;
     font-size:50px;
@@ -6,8 +20,14 @@ h1 {
 }
 
 h2 {
-    color: #00F1FF;
-    font-weight:bold;
+    color: white;
+    font-weight:normal;
+}
+
+p {
+    font-size:20px;
+    color: white;
+    font-weight:normal;
 }
 
 .big-text{
@@ -26,17 +46,28 @@ h2 {
   z-index:-1;
 }
 
-.name_header{
-  text-align: center;
-  top: 0;
-  padding: 0px;
-  position: relative;
-  margin: 0px;
-  background: linear-gradient(to bottom, #000000 0%,#363b82 13%,#599dd1 25%,#ffffff 40%,#341f49 66%,#933f8a 80%,#e060dc 90%,#ffffff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  }
 
+.textcols {
+	display: table;
+	width: 1080px;
+	border-collapse: collapse;
+}
+.textcols-row {
+	 display: table-row;
+}
+.textcols-item {
+	display: table-cell;
+	width: 50%;
+	vertical-align: top;
+	padding: 0;
+
+}
+.textcols-row .textcols-item:first-child {
+	border-right: 30px solid #fff;
+}
+.textcols-row .textcols-item:last-last {
+	border-left: 30px solid #fff;
+}
 
 .content {
   position: fixed;
@@ -49,20 +80,13 @@ h2 {
 
 body {
     background-color: #02000D;
-    font-family: "SFProText";
+    font-family: "MyFont";
 
 }
 
 @font-face {
-    font-family: "SFProText";
+    font-family: "MyFont";
     src : url("../fonts/Rocket Rinder.otf");
     font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "SFProText";
-    src : url("../fonts/SFProText-Bold.ttf");
-    font-weight: bold;
     font-style: normal;
 }

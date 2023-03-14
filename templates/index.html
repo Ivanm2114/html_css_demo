@@ -7,24 +7,34 @@
     <title>Ivan Mityushkin Data</title>
 </head>
 <header>
-  <h1 class="name_header">
-      Ivan Mityushkin
-  </h1>
+    <h1 class="name_header" style="font-size:90px">
+        Ivan Mityushkin
+    </h1>
 </header>
 <body>
 
 
 <video autoplay muted loop id="myVideo">
-  <source src="../video/Retrowave - The Grid.mp4" type="video/mp4">
+    <source src="../video/Retrowave - The Grid.mp4" type="video/mp4">
 </video>
-<h1>I`m 18 y.o.</h1>
-<h2>Studying in HSE MIEM</h2>
-<p>I love programming</p>
 
+<div style="float:left; padding-left:20px">
+    <img src="{{photo}}" style="max-width:200px">
+    <h1>I`m 18 y.o.</h1>
+    <h2>Studying in HSE MIEM</h2>
+    <p>I love programming</p>
+    <p>My corporative email: {{email}}</p>
+    <p>Oh also I`m workign on my curse work</p>
+    <p>Now it has {{branch_amount}} branches</p>
+    <p>Last commit was done on branch named {{last_commit_branch}}</p>
+    <p>And it is entitled {{last_commit_title}}</p>
+</div>
+<div style="float:right; padding-right:20px">
+    <h1>Steam data</h1>
+    <h2>Studying in HSE MIEM</h2>
+    <p>I love programming</p>
 
-
-
-
+</div>
 
 
 </body>
