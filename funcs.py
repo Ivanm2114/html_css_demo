@@ -1,12 +1,26 @@
 import requests
+import zulip
 
 
 # CABINET MIEM INFO
-def cabinet_student_text(student_id):
+def cabinet_student(student_id):
     RESPONSE = requests.get(f"https://cabinet.miem.hse.ru/public"
                             f"-api/student_"
                             f"statistics/{student_id}", timeout=1).json()
     return RESPONSE
+
+
+# CABINET MIEM INFO
+def gitlab_data(private_token):
+    RESPONSE = requests.get("https://git.miem.hse.ru/api/v4/projects/9594/repository/branches", timeout=1,
+                            params={"PRIVATE-TOKEN": private_token}).json()
+    return RESPONSE
+
+
+def zulip_data(user_id, key, email, url):
+    client = zulip.Client(email=email, api_key=key, site=url)
+    result = client.get_user_by_id(user_id)
+    return result
 
 
 # GENRAL STATS
