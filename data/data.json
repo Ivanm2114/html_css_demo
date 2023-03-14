@@ -218,7 +218,142 @@
             "myProjects": []
         }
     },
-    "steam_genera": {
+    "zulip_json": {
+        "result": "success",
+        "msg": "",
+        "user": {
+            "email": "ikmityushkin@edu.hse.ru",
+            "user_id": 2453,
+            "avatar_version": 3,
+            "is_admin": false,
+            "is_owner": false,
+            "is_guest": false,
+            "is_billing_admin": false,
+            "role": 400,
+            "is_bot": false,
+            "full_name": "Иван Митюшкин",
+            "timezone": "Europe/Moscow",
+            "is_active": true,
+            "date_joined": "2023-01-21T11:57:51.066992+00:00",
+            "avatar_url": "/user_avatars/2/5d94fd26c3883d5e06248acfaa1ff1f6292f81bc.png?version=3",
+            "delivery_email": "ikmityushkin@edu.hse.ru"
+        }
+    },
+    "gitlab_json": [
+        {
+            "name": "alpha",
+            "commit": {
+                "id": "be6635a27929fd4cc6762829f58edae26500bc4e",
+                "short_id": "be6635a2",
+                "created_at": "2023-02-21T16:03:48.000+03:00",
+                "parent_ids": [
+                    "1bd304fe52050b772fc4b8d799d245fd1d6e3851"
+                ],
+                "title": "vids update",
+                "message": "vids update\n",
+                "author_name": "Ivan",
+                "author_email": "67190437+Ivanm2114@users.noreply.github.com",
+                "authored_date": "2023-02-21T16:03:48.000+03:00",
+                "committer_name": "Ivan",
+                "committer_email": "67190437+Ivanm2114@users.noreply.github.com",
+                "committed_date": "2023-02-21T16:03:48.000+03:00",
+                "trailers": {},
+                "web_url": "https://git.miem.hse.ru/kursah_da_kruto/kursach-yeah/-/commit/be6635a27929fd4cc6762829f58edae26500bc4e"
+            },
+            "merged": false,
+            "protected": false,
+            "developers_can_push": false,
+            "developers_can_merge": false,
+            "can_push": false,
+            "default": false,
+            "web_url": "https://git.miem.hse.ru/kursah_da_kruto/kursach-yeah/-/tree/alpha"
+        },
+        {
+            "name": "development",
+            "commit": {
+                "id": "0315095bbf5c3c7e889cb6ca69b0c019f4236d9b",
+                "short_id": "0315095b",
+                "created_at": "2023-02-05T18:47:17.000+03:00",
+                "parent_ids": [
+                    "31e53f2c1551938f13142c468033761d603cbaac"
+                ],
+                "title": "gitignore + readme",
+                "message": "gitignore + readme\n",
+                "author_name": "Ivan",
+                "author_email": "67190437+Ivanm2114@users.noreply.github.com",
+                "authored_date": "2023-02-05T18:47:17.000+03:00",
+                "committer_name": "Ivan",
+                "committer_email": "67190437+Ivanm2114@users.noreply.github.com",
+                "committed_date": "2023-02-05T18:47:17.000+03:00",
+                "trailers": {},
+                "web_url": "https://git.miem.hse.ru/kursah_da_kruto/kursach-yeah/-/commit/0315095bbf5c3c7e889cb6ca69b0c019f4236d9b"
+            },
+            "merged": false,
+            "protected": false,
+            "developers_can_push": false,
+            "developers_can_merge": false,
+            "can_push": false,
+            "default": false,
+            "web_url": "https://git.miem.hse.ru/kursah_da_kruto/kursach-yeah/-/tree/development"
+        },
+        {
+            "name": "gamma",
+            "commit": {
+                "id": "34f3da06171cfc9e9a3fab8610d953a858c4d78c",
+                "short_id": "34f3da06",
+                "created_at": "2023-03-08T22:33:08.000+03:00",
+                "parent_ids": [
+                    "706271fac7c49ab90512af97706aa8602d0d322c"
+                ],
+                "title": "Button pullup & variable",
+                "message": "Button pullup & variable\n\nNow button works through PULLUP resitor and variable for button is done\n",
+                "author_name": "Ivan",
+                "author_email": "67190437+Ivanm2114@users.noreply.github.com",
+                "authored_date": "2023-03-08T22:33:08.000+03:00",
+                "committer_name": "Ivan",
+                "committer_email": "67190437+Ivanm2114@users.noreply.github.com",
+                "committed_date": "2023-03-08T22:33:08.000+03:00",
+                "trailers": {},
+                "web_url": "https://git.miem.hse.ru/kursah_da_kruto/kursach-yeah/-/commit/34f3da06171cfc9e9a3fab8610d953a858c4d78c"
+            },
+            "merged": false,
+            "protected": false,
+            "developers_can_push": false,
+            "developers_can_merge": false,
+            "can_push": false,
+            "default": false,
+            "web_url": "https://git.miem.hse.ru/kursah_da_kruto/kursach-yeah/-/tree/gamma"
+        },
+        {
+            "name": "master",
+            "commit": {
+                "id": "9909767eaaf33524f340e958e3e835dbcacc7a37",
+                "short_id": "9909767e",
+                "created_at": "2023-02-05T18:46:51.000+03:00",
+                "parent_ids": [
+                    "34a4f4057409a74ee3777f3d323b6b696cd7186c"
+                ],
+                "title": "Create .gitignore",
+                "message": "Create .gitignore\n",
+                "author_name": "Ivan",
+                "author_email": "67190437+Ivanm2114@users.noreply.github.com",
+                "authored_date": "2023-02-05T18:46:51.000+03:00",
+                "committer_name": "Ivan",
+                "committer_email": "67190437+Ivanm2114@users.noreply.github.com",
+                "committed_date": "2023-02-05T18:46:51.000+03:00",
+                "trailers": {},
+                "web_url": "https://git.miem.hse.ru/kursah_da_kruto/kursach-yeah/-/commit/9909767eaaf33524f340e958e3e835dbcacc7a37"
+            },
+            "merged": false,
+            "protected": true,
+            "developers_can_push": true,
+            "developers_can_merge": false,
+            "can_push": false,
+            "default": true,
+            "web_url": "https://git.miem.hse.ru/kursah_da_kruto/kursach-yeah/-/tree/master"
+        }
+    ],
+    "steam_json": {
         "response": {
             "players": [
                 {
@@ -232,7 +367,7 @@
                     "avatarmedium": "https://avatars.akamai.steamstatic.com/d84c21a60756feb8a22d2e505af06cf810e147ad_medium.jpg",
                     "avatarfull": "https://avatars.akamai.steamstatic.com/d84c21a60756feb8a22d2e505af06cf810e147ad_full.jpg",
                     "avatarhash": "d84c21a60756feb8a22d2e505af06cf810e147ad",
-                    "lastlogoff": 1678698472,
+                    "lastlogoff": 1678750700,
                     "personastate": 1,
                     "realname": "Вентилятор",
                     "primaryclanid": "103582791467582375",
@@ -245,7 +380,7 @@
             ]
         }
     },
-    "cs_stats": {
+    "cs_json": {
         "playerstats": {
             "steamID": "76561198154848246",
             "gameName": "ValveTestApp260",
@@ -1379,7 +1514,7 @@
             ]
         }
     },
-    "payday_stats": {
+    "payday2_json": {
         "playerstats": {
             "steamID": "76561198154848246",
             "gameName": "PAYDAY 2",
