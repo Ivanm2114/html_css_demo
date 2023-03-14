@@ -5,4 +5,6 @@
 /Scripts/
 /.idea
 /venv
-/.zuliprc
+/zuliprc
+/.gitignore
+/templates/ready.html
