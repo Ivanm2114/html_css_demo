@@ -8,6 +8,7 @@
   background: linear-gradient(to bottom, #000000 13%,#363b82 27%,#599dd1 34%,#ffffff 45%,#341f49 51%,#933f8a 64%,#933f8a 74%,#e060dc 90%,#ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: #F19FCD 0 10px 60px;
   }
 
 
@@ -33,6 +34,10 @@ p {
 .big-text{
     font-size: 75px;
     font-weight: bold;
+}
+
+div {
+text-shadow: white 0px 0px 15px;
 }
 
 
