@@ -12,7 +12,8 @@ def cabinet_student(student_id):
 
 # CABINET MIEM INFO
 def gitlab_data(private_token):
-    RESPONSE = requests.get("https://git.miem.hse.ru/api/v4/projects/9594/repository/branches", timeout=1,
+    RESPONSE = requests.get("https://git.miem.hse.ru/api/v4/projects/9594"
+                            "/repository/branches", timeout=1,
                             params={"PRIVATE-TOKEN": private_token}).json()
     return RESPONSE
 
@@ -51,14 +52,16 @@ def payday2_steam_stats(key, steam_id):
 def find_last_commited_branch(gitlab_json):
     last_commited_branch_json = gitlab_json[0]
     for i in range(1, len(gitlab_json)):
-        if gitlab_json[i]["commit"]["created_at"] > last_commited_branch_json["commit"]["created_at"]:
+        if gitlab_json[i]["commit"]["created_at"] > \
+                last_commited_branch_json["commit"]["created_at"]:
             last_commited_branch_json = gitlab_json[i]
     return last_commited_branch_json
 
 
 def prepare_data(d):
     data = {}
-    photo_s = "https://chat.miem.hse.ru" + d["zulip_json"]["user"]["avatar_url"]
+    photo_s = "https://chat.miem.hse.ru" + \
+              d["zulip_json"]["user"]["avatar_url"]
     photo_list = list(photo_s)
     photo_list.insert(photo_s.find("?") - 4, "-medium")
     photo_s = ''.join(photo_list)

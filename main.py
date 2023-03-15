@@ -3,11 +3,11 @@
 import os
 import json
 
-from jinja2 import Environment, PackageLoader, select_autoescape, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader
 
 from dotenv import load_dotenv
 from funcs import cs_steam_stats, cabinet_student, \
-    steam_profile_stats, payday2_steam_stats, zulip_data, gitlab_data,\
+    steam_profile_stats, payday2_steam_stats, zulip_data, gitlab_data, \
     prepare_data
 
 load_dotenv()
@@ -24,14 +24,15 @@ zulip_url = os.getenv("ZULIP_URL")
 # CABINET MIEM INFO
 cabinet_json = cabinet_student(student_id)
 
-zulip_json = zulip_data(zulip_id, zulip_key, zulip_email,zulip_url)
+zulip_json = zulip_data(zulip_id, zulip_key, zulip_email, zulip_url)
 
 gitlab_json = gitlab_data(gitlab_token)
 
 steam_json = steam_profile_stats(steam_key, player_id)
 cs_json = cs_steam_stats(steam_key, player_id)
 payday2_json = payday2_steam_stats(steam_key, player_id)
-d = {"cabinet_miem": cabinet_json, "zulip_json": zulip_json, "gitlab_json": gitlab_json, "steam_json": steam_json,
+d = {"cabinet_miem": cabinet_json, "zulip_json": zulip_json,
+     "gitlab_json": gitlab_json, "steam_json": steam_json,
      "cs_json": cs_json, "payday2_json": payday2_json}
 
 with open("data/data.json", mode='w', encoding='utf-8') as file:
@@ -41,8 +42,10 @@ with open("data/data.json", mode='w', encoding='utf-8') as file:
 env = Environment(loader=FileSystemLoader("templates/"))
 template = env.get_template('index.html')
 
+data = prepare_data(d)
 
-data=prepare_data(d)
+template_text = template.render(data=data)
 
 with open("templates/ready.html", mode='w') as file:
-    file.write(template.render(data=data))
+    file.write(template_text)
+    print(template_text)
