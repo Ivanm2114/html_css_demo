@@ -46,3 +46,26 @@ def payday2_steam_stats(key, steam_id):
         f"ISteamUserStats/GetUserStatsForGame/"
         f"v0002/?appid=218620&key={key}&steamid={steam_id}", timeout=1).json()
     return payday_stats
+
+
+def find_last_commited_branch(gitlab_json):
+    last_commited_branch_json = gitlab_json[0]
+    for i in range(1, len(gitlab_json)):
+        if gitlab_json[i]["commit"]["created_at"] > last_commited_branch_json["commit"]["created_at"]:
+            last_commited_branch_json = gitlab_json[i]
+    return last_commited_branch_json
+
+
+def prepare_data(d):
+    data = {}
+    photo_s = "https://chat.miem.hse.ru" + d["zulip_json"]["user"]["avatar_url"]
+    photo_list = list(photo_s)
+    photo_list.insert(photo_s.find("?") - 4, "-medium")
+    photo_s = ''.join(photo_list)
+    data["email"] = d["zulip_json"]["user"]["email"]
+    data["photo"] = photo_s
+    data["branch_amount"] = len(d["gitlab_json"])
+    last_commited_branch_json = find_last_commited_branch(d["gitlab_json"])
+    data["last_commited_branch"] = last_commited_branch_json["name"]
+    data["last_commit_title"] = last_commited_branch_json["commit"]["title"]
+    return data
