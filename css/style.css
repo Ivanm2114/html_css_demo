@@ -69,6 +69,11 @@ p {
 	border-left: 30px solid #fff;
 }
 
+img {
+    max-width:200px;
+    border-radius:20px;
+}
+
 .content {
   position: fixed;
   top: 0;
