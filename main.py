@@ -7,7 +7,8 @@ from jinja2 import Environment, PackageLoader, select_autoescape, FileSystemLoad
 
 from dotenv import load_dotenv
 from funcs import cs_steam_stats, cabinet_student, \
-    steam_profile_stats, payday2_steam_stats, zulip_data, gitlab_data
+    steam_profile_stats, payday2_steam_stats, zulip_data, gitlab_data,\
+    prepare_data
 
 load_dotenv()
 
@@ -39,11 +40,9 @@ with open("data/data.json", mode='w', encoding='utf-8') as file:
 
 env = Environment(loader=FileSystemLoader("templates/"))
 template = env.get_template('index.html')
-print(template.render(photo="https://chat.miem.hse.ru/" + d["zulip_json"]["user"]["avatar_url"]))
 
-photo_s = "https://chat.miem.hse.ru" + d["zulip_json"]["user"]["avatar_url"]
-photo_list = list(photo_s)
-photo_list.insert(photo_s.find("?") - 4, "-medium")
-photo_s = ''.join(photo_list)
+
+data=prepare_data(d)
+
 with open("templates/ready.html", mode='w') as file:
-    file.write(template.render(photo=photo_s))
+    file.write(template.render(data=data))
