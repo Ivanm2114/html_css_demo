@@ -12,7 +12,14 @@
   }
 
 
+.music{
 
+  top: 0;
+  position: fixed;
+  left: 0;
+  padding: 20px;
+
+}
 
 h1 {
     color: white;
