@@ -46,6 +46,6 @@ data = prepare_data(d)
 
 template_text = template.render(data=data)
 
-with open("templates/ready.html", mode='w') as file:
+with open("templates/ready.html", mode='w',encoding='utf-8') as file:
     file.write(template_text)
     print(template_text)
