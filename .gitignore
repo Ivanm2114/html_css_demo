@@ -8,4 +8,4 @@
 /zuliprc
 /.gitignore
 /templates/ready.html
-/share
+/share/
