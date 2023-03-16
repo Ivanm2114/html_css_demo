@@ -58,6 +58,13 @@ def find_last_commited_branch(gitlab_json):
     return last_commited_branch_json
 
 
+def get_value_from_steam_game_stats(game_json, field):
+    for el in game_json["playerstats"]["stats"]:
+        if el["name"] == field:
+            return el["value"]
+    return -1
+
+
 def prepare_data(d):
     data = {}
     photo_s = "https://chat.miem.hse.ru" + \
@@ -71,4 +78,6 @@ def prepare_data(d):
     last_commited_branch_json = find_last_commited_branch(d["gitlab_json"])
     data["last_commited_branch"] = last_commited_branch_json["name"]
     data["last_commit_title"] = last_commited_branch_json["commit"]["title"]
+    data["amount_of_games_won"] = get_value_from_steam_game_stats(d["cs_json"], "total_matches_won")
+    data["succed_heists"] = get_value_from_steam_game_stats(d["payday2_json"], "heist_success")
     return data

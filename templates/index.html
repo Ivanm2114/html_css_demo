@@ -26,21 +26,25 @@
 
 <div style="float:left; padding-left:20px; text-shadow: white 0px 0px 15px;">
     <img src="{{data.photo}}" style="max-width:200px">
-    <h1>I`m 18 y.o.</h1>
-    <h2>Studying in HSE MIEM</h2>
-    <p>I love programming</p>
-    <p>My corporative email: {{data.email}}</p>
-    <p>Oh also I`m workign on my curse work</p>
-    <p>Now it has {{data.branch_amount}} branches</p>
-    <p>Last commit was done on branch named "{{data.last_commited_branch}}"</p>
-    <p>And it is entitled "{{data.last_commit_title}}"</p>
+    <div>
+        <h1>I`m 18 y.o.</h1>
+        <h2>Studying in HSE MIEM</h2>
+        <p>I love programming</p>
+        <p>My corporative email: {{data.email}}</p>
+        <p>Oh also I`m workign on my curse work</p>
+        <p>Now it has {{data.branch_amount}} branches</p>
+        <p>Last commit was done on branch named "{{data.last_commited_branch}}"</p>
+        <p>And it is entitled "{{data.last_commit_title}}"</p>
+    </div>
 </div>
 <div style="float:right; padding-right:20px;">
-    <img src="../imgs/rayan.jpg" style="float: right;">
-    <h1>Steam data</h1>
-    <h2>Studying in HSE MIEM</h2>
-    <p>I love programming</p>
-
+    <img src="../imgs/rayan.jpg" style="position: relative; left: 30px;">
+    <div>
+        <h1>Oh, I also play games</h1>
+        <h2>Take a look at my stats</h2>
+        <h2>Amount of games in CS:GO won: {{data.amount_of_games_won}}</h2>
+        <p>Amount of heists succeed in PAYDAY2: {{data.succed_heists}}</p>
+    </div>
 </div>
 
 
