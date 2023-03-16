@@ -78,6 +78,8 @@ def prepare_data(d):
     last_commited_branch_json = find_last_commited_branch(d["gitlab_json"])
     data["last_commited_branch"] = last_commited_branch_json["name"]
     data["last_commit_title"] = last_commited_branch_json["commit"]["title"]
-    data["amount_of_games_won"] = get_value_from_steam_game_stats(d["cs_json"], "total_matches_won")
-    data["succed_heists"] = get_value_from_steam_game_stats(d["payday2_json"], "heist_success")
+    data["amount_of_games_won"] = get_value_from_steam_game_stats\
+        (d["cs_json"], "total_matches_won")
+    data["succed_heists"] = get_value_from_steam_game_stats\
+        (d["payday2_json"], "heist_success")
     return data
