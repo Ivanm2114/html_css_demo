@@ -75,11 +75,14 @@ def prepare_data(input_data):
     data["email"] = input_data["zulip_json"]["user"]["email"]
     data["photo"] = photo_s
     data["branch_amount"] = len(input_data["gitlab_json"])
-    last_commited_branch_json = find_last_commited_branch(input_data["gitlab_json"])
+    last_commited_branch_json = find_last_commited_branch\
+        (input_data["gitlab_json"])
     data["last_commited_branch"] = last_commited_branch_json["name"]
     data["last_commit_title"] = last_commited_branch_json["commit"]["title"]
     data["amount_of_games_won"] = \
-        get_value_from_steam_game_stats(input_data["cs_json"], "total_matches_won")
+        get_value_from_steam_game_stats(input_data["cs_json"],
+                                        "total_matches_won")
     data["succed_heists"] = \
-        get_value_from_steam_game_stats(input_data["payday2_json"], "heist_success")
+        get_value_from_steam_game_stats(input_data["payday2_json"],
+                                        "heist_success")
     return data
