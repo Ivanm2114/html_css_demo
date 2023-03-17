@@ -3,29 +3,29 @@ import zulip
 
 
 # CABINET MIEM INFO
-def cabinet_student(student_id):
-    RESPONSE = requests.get(f"https://cabinet.miem.hse.ru/public"
+def get_cabinet_student(student_id):
+    response = requests.get(f"https://cabinet.miem.hse.ru/public"
                             f"-api/student_"
                             f"statistics/{student_id}", timeout=1).json()
-    return RESPONSE
+    return response
 
 
 # CABINET MIEM INFO
-def gitlab_data(private_token):
-    RESPONSE = requests.get("https://git.miem.hse.ru/api/v4/projects/9594"
+def get_gitlab_data(private_token):
+    response = requests.get("https://git.miem.hse.ru/api/v4/projects/9594"
                             "/repository/branches", timeout=1,
                             params={"PRIVATE-TOKEN": private_token}).json()
-    return RESPONSE
+    return response
 
 
-def zulip_data(user_id, key, email, url):
+def get_zulip_data(user_id, key, email, url):
     client = zulip.Client(email=email, api_key=key, site=url)
     result = client.get_user_by_id(user_id)
     return result
 
 
 # GENRAL STATS
-def steam_profile_stats(key, steam_id):
+def get_steam_profile_stats(key, steam_id):
     steam_stats = requests.get(
         f"http://api.steampowered.com/"
         f"ISteamUser/GetPlayerSummaries/"
@@ -33,7 +33,7 @@ def steam_profile_stats(key, steam_id):
     return steam_stats
 
 
-def cs_steam_stats(key, steam_id):
+def get_cs_steam_stats(key, steam_id):
     cs_stats = requests.get(
         f"http://api.steampowered.com/"
         f"ISteamUserStats/GetUserStatsForGame/"
@@ -41,7 +41,7 @@ def cs_steam_stats(key, steam_id):
     return cs_stats
 
 
-def payday2_steam_stats(key, steam_id):
+def get_payday2_steam_stats(key, steam_id):
     payday_stats = requests.get(
         f"http://api.steampowered.com/"
         f"ISteamUserStats/GetUserStatsForGame/"
@@ -65,21 +65,21 @@ def get_value_from_steam_game_stats(game_json, field):
     return -1
 
 
-def prepare_data(d):
+def prepare_data(input_data):
     data = {}
     photo_s = "https://chat.miem.hse.ru" + \
-              d["zulip_json"]["user"]["avatar_url"]
+              input_data["zulip_json"]["user"]["avatar_url"]
     photo_list = list(photo_s)
     photo_list.insert(photo_s.find("?") - 4, "-medium")
     photo_s = ''.join(photo_list)
-    data["email"] = d["zulip_json"]["user"]["email"]
+    data["email"] = input_data["zulip_json"]["user"]["email"]
     data["photo"] = photo_s
     data["branch_amount"] = len(d["gitlab_json"])
     last_commited_branch_json = find_last_commited_branch(d["gitlab_json"])
     data["last_commited_branch"] = last_commited_branch_json["name"]
     data["last_commit_title"] = last_commited_branch_json["commit"]["title"]
     data["amount_of_games_won"] = \
-        get_value_from_steam_game_stats(d["cs_json"], "total_matches_won")
+        get_value_from_steam_game_stats(input_data["cs_json"], "total_matches_won")
     data["succed_heists"] = \
-        get_value_from_steam_game_stats(d["payday2_json"], "heist_success")
+        get_value_from_steam_game_stats(input_data["payday2_json"], "heist_success")
     return data
