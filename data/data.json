@@ -327,22 +327,22 @@
         {
             "name": "master",
             "commit": {
-                "id": "9909767eaaf33524f340e958e3e835dbcacc7a37",
-                "short_id": "9909767e",
-                "created_at": "2023-02-05T18:46:51.000+03:00",
+                "id": "465625a3cd82e2603b229698558d11c67ede0084",
+                "short_id": "465625a3",
+                "created_at": "2023-03-17T21:09:33.000+03:00",
                 "parent_ids": [
-                    "34a4f4057409a74ee3777f3d323b6b696cd7186c"
+                    "9909767eaaf33524f340e958e3e835dbcacc7a37"
                 ],
-                "title": "Create .gitignore",
-                "message": "Create .gitignore\n",
+                "title": "Added user guide + work describtion",
+                "message": "Added user guide + work describtion\n",
                 "author_name": "Ivan",
                 "author_email": "67190437+Ivanm2114@users.noreply.github.com",
-                "authored_date": "2023-02-05T18:46:51.000+03:00",
+                "authored_date": "2023-03-17T21:09:33.000+03:00",
                 "committer_name": "Ivan",
                 "committer_email": "67190437+Ivanm2114@users.noreply.github.com",
-                "committed_date": "2023-02-05T18:46:51.000+03:00",
+                "committed_date": "2023-03-17T21:09:33.000+03:00",
                 "trailers": {},
-                "web_url": "https://git.miem.hse.ru/kursah_da_kruto/kursach-yeah/-/commit/9909767eaaf33524f340e958e3e835dbcacc7a37"
+                "web_url": "https://git.miem.hse.ru/kursah_da_kruto/kursach-yeah/-/commit/465625a3cd82e2603b229698558d11c67ede0084"
             },
             "merged": false,
             "protected": true,
