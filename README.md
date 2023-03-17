@@ -1,6 +1,7 @@
 # About program
 
-This code takes personal data from cabinet.meim and steam stats like your profile stats and CS:GO and PAYDAY 2 stats.
+This code takes personal data from cabinet.meim and steam stats like your profile stats and CS:GO and PAYDAY 2 stats,
+creates JSON and put it to html template.
 
 # How to start
 1. Download all libraries using 
