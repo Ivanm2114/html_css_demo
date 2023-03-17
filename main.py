@@ -7,7 +7,7 @@ from jinja2 import Environment, FileSystemLoader
 
 from dotenv import load_dotenv
 from funcs import get_cs_steam_stats, get_cabinet_student, \
-    get_steam_profile_stats, get_payday2_steam_stats,\
+    get_steam_profile_stats, get_payday2_steam_stats, \
     get_zulip_data, get_gitlab_data, \
     prepare_data
 
