@@ -6,8 +6,8 @@ import json
 from jinja2 import Environment, FileSystemLoader
 
 from dotenv import load_dotenv
-from funcs import cs_steam_stats, cabinet_student, \
-    steam_profile_stats, payday2_steam_stats, zulip_data, gitlab_data, \
+from funcs import get_cs_steam_stats, get_cabinet_student, \
+    get_steam_profile_stats, get_payday2_steam_stats, get_zulip_data, get_gitlab_data, \
     prepare_data
 
 load_dotenv()
@@ -22,15 +22,15 @@ ZULIP_EMAIL = os.getenv("ZULIP_EMAIL")
 ZULIP_URL = os.getenv("ZULIP_URL")
 
 # CABINET MIEM INFO
-cabinet_json = cabinet_student(STUDENT_ID)
+cabinet_json = get_cabinet_student(STUDENT_ID)
 
-zulip_json = zulip_data(ZULIP_ID, ZULIP_KEY, ZULIP_EMAIL, ZULIP_URL)
+zulip_json = get_zulip_data(ZULIP_ID, ZULIP_KEY, ZULIP_EMAIL, ZULIP_URL)
 
-gitlab_json = gitlab_data(GITLAB_TOKEN)
+gitlab_json = get_gitlab_data(GITLAB_TOKEN)
 
-steam_json = steam_profile_stats(STEAM_KEY, PLAYER_ID)
-cs_json = cs_steam_stats(STEAM_KEY, PLAYER_ID)
-payday2_json = payday2_steam_stats(STEAM_KEY, PLAYER_ID)
+steam_json = get_steam_profile_stats(STEAM_KEY, PLAYER_ID)
+cs_json = get_cs_steam_stats(STEAM_KEY, PLAYER_ID)
+payday2_json = get_payday2_steam_stats(STEAM_KEY, PLAYER_ID)
 json_data = {"cabinet_miem": cabinet_json, "zulip_json": zulip_json,
      "gitlab_json": gitlab_json, "steam_json": steam_json,
      "cs_json": cs_json, "payday2_json": payday2_json}
