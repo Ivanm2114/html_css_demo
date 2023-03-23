@@ -41,12 +41,12 @@ with open("data/data.json", mode='w', encoding='utf-8') as file:
     print(json_data)
 
 env = Environment(loader=FileSystemLoader("templates/"))
-template = env.get_template('index.html')
+template = env.get_template('template.html')
 
 html_data = prepare_data(json_data)
 
 template_text = template.render(data=html_data)
 
-with open("templates/ready.html", mode='w', encoding='utf-8') as file:
+with open("index.html", mode='w', encoding='utf-8') as file:
     file.write(template_text)
     print(template_text)
