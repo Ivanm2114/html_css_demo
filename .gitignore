@@ -9,3 +9,4 @@
 /.gitignore
 /templates/ready.html
 /share/
+/data/data.json
